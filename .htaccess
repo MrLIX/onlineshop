@@ -1,0 +1,21 @@
+Options +FollowSymlinks
+IndexIgnore */*
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/(web)
+
+RewriteRule ^assets/(.*)$ web/assets/$1 [L] 
+RewriteRule ^paycom/(.*)$ paycom/$1 [L] 
+RewriteRule ^lib/(.*)$ web/lib/$1 [L]
+RewriteRule ^img/(.*)$ web/img/$1 [L]
+RewriteRule ^font/(.*)$ web/font/$1 [L]
+RewriteRule ^css/(.*)$ web/css/$1 [L]
+RewriteRule ^scss/(.*)$ web/scss/$1 [L]
+RewriteRule ^js/(.*)$ web/js/$1 [L]
+RewriteRule ^images/(.*)$ web/images/$1 [L] 
+RewriteRule ^uploads/(.*)$ web/uploads/$1 [L] 
+RewriteRule (.*) web/index.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . web/index.php

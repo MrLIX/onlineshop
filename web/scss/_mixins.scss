@@ -1,0 +1,150 @@
+
+
+/* Position
+*****************************************************************************************************/
+@mixin Position($position: a, $top: null, $right: null, $bottom: null, $left: null, $margin: null) {
+	@if $position == a {
+		position: absolute;
+	}
+	@else if $position == f {
+		position: fixed;
+	}
+	@else if $position == r {
+		position: relative;
+	}
+
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+
+	@if $margin {
+		margin: auto;
+	}
+	@else {
+		margin: $margin;
+	}
+}
+/*********** Position ***********/
+
+
+
+
+
+/* Button Color
+*****************************************************************************************************/
+@mixin ButtonDark($background, $percent: 10%) {
+	background: $background;
+
+	&:hover {
+		background: darken($background, $percent);
+	}
+}
+
+
+@mixin ButtonLight($background, $percent: 10%) {
+	background: $background;
+
+	&:hover {
+		background: lighten($background, $percent);
+	}
+}
+
+
+@mixin ButtonReverse($background, $color) {
+	background: $background;
+	color: $color;
+
+	&:hover {
+		background: $color;
+		color: $background;
+	}
+}
+/*********** Button Color ***********/
+
+
+
+
+
+/* Text Mask
+*****************************************************************************************************/
+@mixin TextMask($elemHeight, $maskHeight: 20px, $maskColor: #fff, $type: true, $maxHeightTop: null) {
+	@if $type {
+		height: $elemHeight;
+	}
+	@else {
+		max-height: $elemHeight;
+	}
+	position: relative;
+	overflow: hidden;
+
+	&::after {
+		content: '';
+		display: block;
+		height: $maskHeight;
+		@include Position(a, null, 0, null, 0);
+		@if $type {
+			bottom: 0;
+		}
+		@else {
+			top: $maxHeightTop;
+		}
+		background: linear-gradient(to right, rgba($maskColor, 0.15), $maskColor);
+	}
+}
+/*********** Text Mask ***********/
+
+
+
+
+
+/* Animation
+*****************************************************************************************************/
+@mixin AnimationKey($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-o-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+/*********** Animation ***********/
+
+
+
+
+
+/* Fonts
+*****************************************************************************************************/
+@mixin Fonts($name, $path, $weight: null, $style: null) {
+	@font-face {
+		font-family: $name;
+		src: url($path);
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+/*********** Fonts ***********/
+
+
+
+
+
+/* Column
+*****************************************************************************************************/
+@mixin ColumnCount($number) {
+	column-count: $number;
+}
+
+@mixin ColumnGap($gap) {
+	column-gap: $gap;
+}
+/*********** Column ***********/
+
+

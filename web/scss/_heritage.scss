@@ -1,0 +1,45 @@
+
+
+%placeholder {
+
+	&::-webkit-input-placeholder {
+		color: inherit;
+	}
+	
+	&::-moz-placeholder {
+		color: inherit;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: inherit;
+	}
+
+	&:-moz-placeholder {
+		color: inherit;
+		opacity: 1;
+	}
+
+	&::placeholder {
+		color: inherit;
+		opacity: 1;
+	}
+}
+
+
+
+%spinButton {
+
+	& {
+		-moz-appearance:textfield;
+	}
+
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+
+
+

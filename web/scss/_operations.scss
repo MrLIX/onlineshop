@@ -1,0 +1,20 @@
+
+
+$footerSocial:
+				(facebook, $facebook),
+				(twitter, $twitter),
+				(vk, $vkontakte),
+				(youtube, $youtube),
+				(instagram, $instagram);
+
+@each $class, $color in $footerSocial {
+	.ftr_scl_ls > li > a > i.fa-#{$class}:hover {
+		background: $color;
+	}
+}
+
+
+
+
+
+

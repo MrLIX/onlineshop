@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ../../../../Users/Farhodjon/Downloads/Telegram Desktop/paycom/paycom
+    image: paycom-api:latest
+    container_name: paycom-api
+    ports:
+      - '8888:80'
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - paycom
+    restart: always
+
+  db:
+    image: mysql:latest
+    container_name: paycom-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=7YEBk6bqjNQMHZXT
+      - MYSQL_DATABASE=shop
+      - MYSQL_USER=shopadmin
+      - MYSQL_PASSWORD=rr9pdrmd6LsSv4S5
+    ports:
+      - '3333:3306'
+    volumes:
+      - paycomgwdb:/var/lib/mysql
+    networks:
+      - paycom
+    restart: always
+
+networks:
+  paycom:
+
+volumes:
+  paycomgwdb:

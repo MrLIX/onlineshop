@@ -1,0 +1,71 @@
+
+@import 'mixins';
+
+
+/* Proxima Nova
+*****************************************************************************************************/
+
+$fontBase: 'Proxima Nova';
+$fontBasePath: '../font/proxima_nova/';
+
+
+/* Extra Bold
+----------------------------------------*/
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Extrabold.otf', 800);
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Extrabold Italic.otf', 800, italic);
+
+
+/* Bold
+----------------------------------------*/
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Bold.otf', 700);
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Bold Italic.otf', 700, italic);
+
+
+/* Semi Bold
+----------------------------------------*/
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Semibold.otf', 600);
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Semibold Italic.otf', 600, italic);
+
+
+/* Regular
+----------------------------------------*/
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Regular.otf', 400);
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Regular Italic.otf', 400, italic);
+
+
+/* Light
+----------------------------------------*/
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Light.otf', 300);
+@include Fonts($fontBase, $fontBasePath + 'Proxima Nova Light Italic.otf', 300, italic);
+
+/*********** Proxima Nova ***********/
+
+
+
+
+
+
+
+
+/* Playfair Display
+*****************************************************************************************************/
+
+$fontSecond: 'Playfair Display';
+$fontSecondPath: '../font/playfair_display/';
+
+
+/* Bold
+----------------------------------------*/
+@include Fonts($fontSecond, $fontSecondPath + 'PlayfairDisplay-Bold.ttf', 700);
+@include Fonts($fontSecond, $fontSecondPath + 'PlayfairDisplay-BoldItalic.ttf', 700, italic);
+
+
+/* Regular
+----------------------------------------*/
+@include Fonts($fontSecond, $fontSecondPath + 'PlayfairDisplay-Regular.ttf', 400);
+@include Fonts($fontSecond, $fontSecondPath + 'PlayfairDisplay-Italic.ttf', 400, italic);
+
+/*********** Playfair Display ***********/
+
+
+
